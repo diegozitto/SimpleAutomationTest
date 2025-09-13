@@ -1,5 +1,6 @@
 package methods;
 
+import org.openqa.selenium.By;
 import pages.BcgPage;
 
 public class BcgMethods extends BcgPage {
@@ -10,8 +11,9 @@ public class BcgMethods extends BcgPage {
        return driver.findElement(bcgPage.productName).isDisplayed();
     }
 
-    public void setProductSizeS(){
-        driver.findElement(bcgPage.productSizeS).click();
+    public void setProductSize(String size){
+        By productSize = By.xpath("//div[text()='"+size+"']");
+        driver.findElement(productSize).click();
     }
 
     public void setShipping(String shipping){
@@ -45,8 +47,9 @@ public class BcgMethods extends BcgPage {
         driver.findElement(bcgPage.selectInstallments).click();
     }
 
-    public void selectFristInstallments(){
-        driver.findElement(bcgPage.selectFirstInstallment).click();
+    public void selectInstallments(String installmentDesired){
+        By selectInstallment = By.xpath("(//p[text()='x'])[" + installmentDesired + "]");
+        driver.findElement(selectInstallment).click();
     }
 
     public void clickPurchaseButton(){

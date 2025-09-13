@@ -10,13 +10,13 @@ public class PurchaseHappyPath extends SetupClass {
 
         bcgMethods.validateProductName();
 
-        bcgMethods.setProductSizeS();
+        bcgMethods.setProductSize("M");
 
         bcgMethods.setShipping("1111111");
 
         bcgMethods.clickCreditCard();
 
-        Thread.sleep(1500);
+        Thread.sleep(1000);
 
         bcgMethods.setCardHolderName("Diego");
         bcgMethods.setCardNumber("1234567890");
@@ -25,9 +25,8 @@ public class PurchaseHappyPath extends SetupClass {
         bcgMethods.clickAddCard();
 
         bcgMethods.clickInstallments();
-        Thread.sleep(1500);
+        bcgMethods.selectInstallments("2");
 
-        bcgMethods.selectFristInstallments();
         bcgMethods.clickPurchaseButton();
 
         bcgMethods.validateCongratulationMessage();
