@@ -48,7 +48,7 @@ public class BcgMethods extends BcgPage {
     }
 
     public void selectInstallments(String installmentDesired){
-        By selectInstallment = By.xpath("(//p[text()='x'])[" + installmentDesired + "]");
+        By selectInstallment = By.xpath("//div[@data-value='" + installmentDesired + "']");
         driver.findElement(selectInstallment).click();
     }
 
